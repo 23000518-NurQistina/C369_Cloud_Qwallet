@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qwallet Banking Digital Wallet - Transaction Limit</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .index img {
+            width: 245px;
+        }
+        h2 {
+            text-align: center;
+            color: rgb(105, 69, 69);
+            font-family: 'Permanent Marker', cursive;
+            font-size: 30px;
+        }
+        .form {
+            text-align: center;
+            color: rgb(105, 69, 69);
+            font-family: 'Permanent Marker', cursive;
+            font-size: 25px;
+        }
+        .form button {
+            background-color: white;
+            color:rgb(105, 69, 69);
+            border-color:rgb(105, 69, 69);
+            font-size: 20px;
+            font-family: 'Permanent Marker', cursive;
+        }
+        .form button:hover {
+            background-color:rgb(146, 199, 199);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="navbar">
+            <div class="navbar-logo">
+                <a href="opening.html"><img src="images/logo.png" width="60" height="60" alt="Logo"></a>
+            </div>
+            <ul class="navbar-navlink">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="wallet.html">Wallet</a></li>
+                <li><a href="topup.html">Top Up</a></li>
+                <li><a href="trans.html">Transfer</a></li>
+                <li><a href="pay.html">Pay</a></li>
+                <li><a href="other.html">Others</a></li>
+            </ul>
+            <div class="set-logo">
+                <a href="settings.html"><img src="images/settings.png" width="60" height="60" alt="Settings"></a>
+            </div>
+        </div>
+    </nav>
+    <hr>
+    <h2>Set Limits</h2>
+    <br>
+    <div class="form">
+        <div class="trans-form">
+            <form id="limitForm">
+                <label for="limit">Set Limit Transaction:</label>
+                <input type="number" id="limit" name="limit" min="0" max="5000" required>
+                <button type="submit" id="limitbtn">Submit</button>
+            </form>
+        </div>
+        <script>
+            const limitForm = document.getElementById('limitForm');
+            const limitbtn = document.getElementById('limitbtn');
+
+            limitForm.addEventListener('submit', (event) => {
+                event.preventDefault();
+                alert('Successfully Set Transaction Limit!');
+                window.location.href = 'index.html';
+            });
+        </script>
+        <br>
+        <div class="exp-form">
+            <form id="expForm">
+                <label for="exp" style="color: rgb(105, 69, 69);">Set Limit Expenses for the month:</label>
+                <input type="number" id="exp" name="exp" min="0" max="2000" required>
+                <button type="submit" id="expbtn">Submit</button>
+            </form>
+        </div>
+    <script>
+        const expForm = document.getElementById('expForm');
+        const expbtn = document.getElementById('expbtn');
+
+        expForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            alert('Successfully Set Expenses Limit for the Month!');
+            window.location.href = 'index.html';
+        });
+    </script>
+</div>
+    <footer>
+        <p>&copy; 2024 Qwallet Banking</p>
+    </footer>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>

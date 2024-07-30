@@ -1,0 +1,164 @@
+/* Reset box-sizing for all elements */
+* {
+    box-sizing: border-box;
+}
+
+/* General Styles */
+body {
+    font-family: 'Permanent Marker', cursive;
+}
+
+/* Header Styles */
+header {
+    background-color: whitesmoke;
+    padding: 40px;
+    text-align: center;
+    font-size: 35px;
+    margin-top: 0;
+    color: rgb(105, 69, 69); 
+    font-family: 'Permanent Marker', cursive;
+}
+
+/* Opening Navigation Styles */
+nav {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 10px 20px;
+    color:rgb(105, 69, 69);
+    font-family: 'Permanent Marker', cursive;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-brand {
+    color:rgb(105, 69, 69);
+    font-size: 30px;
+    font-family: 'Permanent Marker', cursive;
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-right ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-right li {
+    margin-left: 20px;
+}
+
+.navbar-right li a {
+    color: rgb(105, 69, 69);
+    text-align: center;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 30px;
+    font-family: 'Permanent Marker', cursive;
+}
+
+.navbar-right li a:hover {
+    background-color: whitesmoke;
+}
+
+/* Horizontal Line Styles */
+hr {
+    border: none; /* Remove default border */
+    height: 10px; /* Set the height of the line */
+    background-color: rgb(105, 69, 69); /* Set the color of the line */
+    margin: 20px 0; /* Add margin for spacing */
+}
+
+/* Carousel Styles */
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    background-color: black;
+    border-radius: 20px;
+}
+
+.carousel-item img {
+    height: 550px;
+}
+
+/* Section Styles */
+section {
+    text-align: center;
+    padding: 60px;
+}
+
+section p {
+    font-size: 20px;
+}
+
+/* Homepage Navigation Styles */
+.navbar-logo img {
+    width: 100px;
+    height: 100px;
+}
+
+.set-logo img {
+    width: 80px;
+    height: 80px;
+}
+
+.navbar-navlink {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-navlink li {
+    margin-left: 20px; /* Space between links */
+}
+
+.navbar-navlink li a {
+    color: rgb(105, 69, 69);
+    text-align: center;
+    padding: 20px 30px;
+    text-decoration: none;
+    font-size: 25px;
+    font-family: 'Permanent Marker', cursive;
+}
+
+.navbar-navlink li a:hover {
+    background-color: whitesmoke;
+}
+
+/* Button Styles */
+.button a {
+    text-align: center;
+    background-color: white;
+    color:rgb(105, 69, 69);
+    border-color:rgb(105, 69, 69);
+    font-size: 20px;
+    font-family: 'Permanent Marker', cursive;
+    margin-left: 30px;
+}
+
+.button a:hover {
+    background-color:rgb(146, 199, 199);
+}
+
+.settings {
+    font-size: 28px;
+    color:rgb(146, 199, 199);
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 20px;
+}

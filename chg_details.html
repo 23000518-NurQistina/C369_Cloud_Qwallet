@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Login Page</title>
+    <style>
+        .navbar-logo {
+            margin-left: 20px;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color:rgb(146, 199, 199); /* Light pink background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #fff; /* White container background */
+            padding: 40px; /* Increased padding */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px; /* Increased width */
+        }
+        .container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color:rgb(105, 69, 69); /* Dark text color */
+            font-size: 30px; /* Increased font size */
+            font-family: 'Permanent Marker', cursive;
+        }
+        .container label {
+            display: block;
+            margin-bottom: 8px;
+            color:rgb(105, 69, 69); /* Dark text color */
+            font-size: 16px; /* Increased font size */
+        }
+        .container input {
+            width: 100%;
+            padding: 15px; /* Increased padding */
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px; /* Increased font size */
+        }
+        .container button {
+            width: 100%;
+            padding: 15px; /* Increased padding */
+            background-color: rgb(146, 199, 199); /* Light pink button background */
+            color:rgb(105, 69, 69);
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 18px; /* Increased font size */
+        }
+        .container button:hover {
+            background-color:rgb(146, 199, 199); /* Darker pink hover for button */
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="navbar">
+            <div class="navbar-logo">
+                <a href="opening.html"><img src="images/logo.png" width="60" height="60" alt="Logo"></a>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <h2 id="form-title">Change Details</h2>
+
+        <form id="changedetails-form" class="active">
+            <label for="changeAge">NRIC</label>
+            <input type="number" id="changeAge" name="newAge" required>
+
+            <label for="changeNRIC">NRIC</label>
+            <input type="text" id="changeNRIC" name="newNRIC" required>
+
+            <label for="changeNo">Phone Number</label>
+            <input type="number" id="changeNo" name="newNo" required>
+
+            <label for="changepAddress">Address</label>
+            <input type="text" id="changepAddress" name="newAdd" required>
+
+            <button type="submit" id="updatebtn">Update</button>
+        </form>
+    </div>
+    <script>
+        const changedetailsForm = document.getElementById('changedetails-form');
+
+        changedetailsForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            alert('Details changed successfully!');
+            window.location.href = 'settings.html';
+        });
+    </script>
+</body>
+</html>

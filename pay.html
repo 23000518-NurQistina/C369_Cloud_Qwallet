@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qwallet Banking Digital Wallet - Accounts</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .id {
+            text-align: right;
+            margin-right: 20px;
+            color: rgb(146, 199, 199);
+            font-size: 30px;
+            font-family: 'Permanent Marker', cursive;
+        }
+        h2 {
+            color: rgb(105, 69, 69);
+            font-family: 'Permanent Marker', cursive;
+            font-size: 30px;
+            text-align: center;
+            margin-top: 40px;
+        }
+        .btn-custom {
+            background-color: rgb(105, 69, 69);
+            color: rgb(146, 199, 199);
+            font-size: 25px;
+            border: none;
+            padding: 15px;
+            max-width: 300px; /* Set a max width for the buttons */
+            width: 100%; /* Ensure buttons are responsive */
+            text-align: center;
+            margin-bottom: 30px;
+            border-radius: 8px;
+        }
+        .btn-custom:hover {
+            background-color: rgb(146, 199, 199);
+            color:rgb(105, 69, 69);
+        }
+        .local-pay, .overseas-pay {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Align items to the center */
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="navbar">
+            <div class="navbar-logo">
+                <a href="opening.html"><img src="images/logo.png" width="60" height="60" alt="Logo"></a>
+            </div>
+            <ul class="navbar-navlink">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="wallet.html">Wallet</a></li>
+                <li><a href="topup.html">Top Up</a></li>
+                <li><a href="trans.html">Transfer</a></li>
+                <li><a href="pay.html">Pay</a></li>
+                <li><a href="other.html">Others</a></li>
+            </ul>
+            <div class="set-logo">
+                <a href="settings.html"><img src="images/settings.png" width="60" height="60" alt="Settings"></a>
+            </div>
+        </div>
+    </nav>
+    <hr>
+    <main class="container">
+        <div class="id">
+            <p>ID:23000518</p>
+        </div>
+        <div class="row">
+            <div class="col-md-6 d-flex flex-column align-items-center local-pay">
+                <h2>Local Pay VIA Pay Quick</h2>
+                <br>
+                <a href="mobile.html" class="btn btn-custom">Pay to Mobile</a>
+                <a href="nric.html" class="btn btn-custom">Pay to NRIC/FIN</a>
+                <a href="id.html" class="btn btn-custom">Pay to ID Number</a>
+            </div>
+            <div class="col-md-6 d-flex flex-column align-items-center overseas-pay">
+                <h2>Overseas Pay VIA Pay Quick</h2>
+                <br>
+                <a href="mobile.html" class="btn btn-custom">QuickPay (Asia)</a>
+                <a href="nric.html" class="btn btn-custom">QuickPay (Europe)</a>
+                <a href="id.html" class="btn btn-custom">QuickPay (America)</a>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Qwallet Banking</p>
+    </footer>
+</body>
+</html>

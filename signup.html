@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Login Page</title>
+    <style>
+        .navbar-logo {
+            margin-left: 20px;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color:rgb(146, 199, 199); /* Light pink background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #fff; /* White container background */
+            padding: 40px; /* Increased padding */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px; /* Increased width */
+        }
+        .container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color:rgb(105, 69, 69); /* Dark text color */
+            font-size: 30px; /* Increased font size */
+            font-family: 'Permanent Marker', cursive;
+        }
+        .container form {
+            display: none;
+        }
+        .container form.active {
+            display: block;
+        }
+        .container label {
+            display: block;
+            margin-bottom: 8px;
+            color:rgb(105, 69, 69); /* Dark text color */
+            font-size: 16px; /* Increased font size */
+        }
+        .container input {
+            width: 100%;
+            padding: 15px; /* Increased padding */
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px; /* Increased font size */
+        }
+        .container button {
+            width: 100%;
+            padding: 15px; /* Increased padding */
+            background-color: rgb(146, 199, 199); /* Light pink button background */
+            color:rgb(105, 69, 69);
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 18px; /* Increased font size */
+        }
+        .container button:hover {
+            background-color:rgb(146, 199, 199); /* Darker pink hover for button */
+        }
+        .toggle-link {
+            text-align: center;
+            margin-top: 10px;
+            color:rgb(105, 69, 69); /* Light pink text color */
+            cursor: pointer;
+            font-size: 16px; /* Increased font size */
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="navbar">
+            <div class="navbar-logo">
+                <a href="opening.html"><img src="images/logo.png" width="60" height="60" alt="Logo"></a>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <h2 id="form-title">Create Account</h2>
+
+        <form id="signup-form" class="active">
+            <label for="signup-username">Username</label>
+            <input type="text" id="signup-username" name="username" required>
+
+            <label for="signup-email">Email</label>
+            <input type="email" id="signup-email" name="email" required>
+
+            <label for="signup-password">Password</label>
+            <input type="password" id="signup-password" name="password" required>
+            <button type="button" onclick="showDetailsForm()">Sign Up</button>
+
+            <h2>Alternative Method:</h2>
+            <a href="https://login.singpass.gov.sg/main?scope=openid&response_type=code&redirect_uri=https%3A%2F%2Fwww.singpass.gov.sg%2Fhome%2Fui%2Fcallback%2Fauth&state=d26231bb-160b-44b4-958a-fbd1a5431794&nonce=2f119486-dd66-4133-ae3f-a64db36108ef&client_id=ntmRnh1tflHVnWsik9AN1Fn2Cx7X8gVw&pwd_enabled=true">
+                <img src="images/singpass.png" class="img-fluid me-4" width="500" alt="Singpass">
+            </a>
+        </form>
+
+        <form id="login-form">
+            <label for="login-username">Username</label>
+            <input type="text" id="login-username" name="username" required>
+
+            <label for="login-password">Password</label>
+            <input type="password" id="login-password" name="password" required>
+            <button type="button"><a href="index.html" style="color: inherit; text-decoration: none;">Login</a></button>
+
+            <a href="https://login.singpass.gov.sg/main?scope=openid&response_type=code&redirect_uri=https%3A%2F%2Fwww.singpass.gov.sg%2Fhome%2Fui%2Fcallback%2Fauth&state=d26231bb-160b-44b4-958a-fbd1a5431794&nonce=2f119486-dd66-4133-ae3f-a64db36108ef&client_id=ntmRnh1tflHVnWsik9AN1Fn2Cx7X8gVw&pwd_enabled=true">
+                <img src="images/singpass.png" class="img-fluid me-4" width="500" alt="Singpass">
+            </a>
+        </form>
+
+        <form id="details-form" onsubmit="handleDetailsForm(event)">
+            <label for="details-nric">NRIC</label>
+            <input type="text" id="details-nric" name="nric" required>
+
+            <label for="details-phone">Phone Number</label>
+            <input type="text" id="details-phone" name="phone" required>
+
+            <label for="details-address">Address</label>
+            <input type="text" id="details-address" name="address" required>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <div class="toggle-link" onclick="toggleForms()">Already have an account? Login</div>
+    </div>
+
+    <script>
+        function toggleForms() {
+            const loginForm = document.getElementById('login-form');
+            const signupForm = document.getElementById('signup-form');
+            const formTitle = document.getElementById('form-title');
+            const toggleLink = document.querySelector('.toggle-link');
+
+            if (signupForm.classList.contains('active')) {
+                signupForm.classList.remove('active');
+                loginForm.classList.add('active');
+                formTitle.textContent = 'Login';
+                toggleLink.textContent = "Don't have an account? Sign up";
+            } else {
+                loginForm.classList.remove('active');
+                signupForm.classList.add('active');
+                formTitle.textContent = 'Sign Up';
+                toggleLink.textContent = 'Already have an account? Login';
+            }
+        }
+
+        function showDetailsForm() {
+            const signupForm = document.getElementById('signup-form');
+            const detailsForm = document.getElementById('details-form');
+            const formTitle = document.getElementById('form-title');
+            
+            signupForm.classList.remove('active');
+            detailsForm.classList.add('active');
+            formTitle.textContent = 'User Details';
+        }
+
+        function handleDetailsForm(event) {
+            event.preventDefault(); // Prevent the default form submission
+            window.location.href = 'index.html'; // Redirect to index
+        }
+    </script>
+</body>
+</html>
