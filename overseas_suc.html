@@ -16,73 +16,140 @@
             font-size: 30px;
             font-family: 'Permanent Marker', cursive;
         }
-        h2 {
-            margin-left: 100px;
-            color:rgb(105, 69, 69);
+        h2, h3 {
+            color: rgb(105, 69, 69);
             font-family: 'Permanent Marker', cursive;
-            font-size: 28px;
+        }
+        h2 {
+            font-size: 2rem;
         }
         h3 {
-            margin-left: 100px;
-            color:rgb(105, 69, 69);
-            font-family: 'Permanent Marker', cursive;
-            font-size: 32px;
+            font-size: 2.5rem;
         }
         .button {
-            margin-right: 100px;
-            padding: 15px;
+            margin-bottom: 10px;
+            width: 100%;
+        }
+        .container-right {
+            display: flex;
+            align-items: center;
+        }
+        .container-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: center;
+        }
+        .container-right .button {
+            width: auto;
+        }
+        .btn.btn-primary:hover {
+            color:rgb(105, 69, 69);
+            background-color:rgb(146, 199, 199);
+        }
+        .support {
+            width: 60px;
+            height: auto; 
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            cursor: pointer;
+            z-index: 1000;
+        }
+        .popup {
+            position: fixed;
+            right: 80px;
+            bottom: 80px;
+            width: 300px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            display: none;
+            padding: 20px;
+            overflow: hidden;
+        }
+        .btn.btn-primary.mb-2:hover {
+            background-color: rgb(146, 199, 199);
+        }
+        @media (max-width: 768px) {
+            .container-left, .container-right {
+                flex-direction: column;
+                align-items: center;
+            }
+            .container-right {
+                align-items: center;
+            }
         }
     </style>
 </head>
 <body>
-    <nav>
-        <div class="navbar">
-            <div class="navbar-logo">
-                <a href="opening.html"><img src="images/logo.png" width="60" height="60" alt="Logo"></a>
-            </div>
-            <ul class="navbar-navlink">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="wallet.html">Wallet</a></li>
-                <li><a href="topup.html">Top Up</a></li>
-                <li><a href="trans.html">Transfer</a></li>
-                <li><a href="pay.html">Pay</a></li>
-                <li><a href="other.html">Others</a></li>
-            </ul>
-            <div class="set-logo">
-                <a href="settings.html"><img src="images/settings.png" width="60" height="60" alt="Settings"></a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a><img src="images/logo.png" width="60" height="60" alt="Logo"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="wallet.html">Wallet</a></li>
+                    <li class="nav-item"><a class="nav-link" href="topup.html">Top Up</a></li>
+                    <li class="nav-item"><a class="nav-link" href="trans.html">Transfer</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pay.html">Pay</a></li>
+                    <li class="nav-item"><a class="nav-link" href="other.html">Others</a></li>
+                </ul>
+                <a href="settings.html" class="btn btn-outline-secondary"><img src="images/settings.png" width="30" height="30" alt="Settings"></a>
             </div>
         </div>
     </nav>
     <hr>
-    <main>
+    <main class="container-fluid">
         <div class="id">
             <p>ID:23000518</p>
-            <section class="mb-5 d-flex align-items-center justify-content-between">
-                <div class="d-flex flex-column align-items-center">
-                    <img src="images/success.png" class="img-fluid mb-4" width="300" alt="Tick" style="margin-left: 100px;">
+        </div>
+        <div class="row">
+            <div class="col-lg-6 container-right">
+                <div class="text-center">
+                    <img src="images/success.png" class="img-fluid mb-4" width="300" alt="Tick">
                     <h2>Successfully Transferred</h2>
-                    <h3 style="color: rgb(79, 128, 79);">179.22 MYR</h3>
+                    <h3 style="color: rgb(79, 128, 79);">174 MYR</h3>
                     <h2>To</h2>
                     <h2>Meerqeen</h2>
-
                 </div>
-                <section class="menu-section">
-                    <div>
-                        <div class="button mb-2">
-                            <a href="trans.html" class="btn btn-primary">New Transfer</a>
-                        </div>
-                        <div class="button mb-2">
-                            <a href="index.html" class="btn btn-primary">Back to home</a>
-                        </div>
-                        <div class="button">
-                            <a href="opening.html" class="btn btn-primary">Log out</a>
-                        </div>
-                    </div>
-                </section>
-            </section>
+            </div>
+            <div class="col-lg-4 container-right">
+                <div class="button mb-2">
+                    <a href="trans.html" class="btn btn-primary">New Transfer</a>
+                </div>
+                <div class="button mb-2">
+                    <a href="index.html" class="btn btn-primary">Back to home</a>
+                </div>
+                <div class="button">
+                    <a href="opening.html" class="btn btn-primary">Log out</a>
+                </div>
+            </div>
         </div>
+        <img class="support" src="images/support.png" alt="Support" onclick="togglePopup()">
+        <div class="popup" id="popup">
+            <img class="loansupport" src="images/support.png">
+            <div>
+                <button class="btn btn-primary mb-2">Ask a question</button>
+                <button class="btn btn-primary mb-2">Message</button>
+                <p>Our live chat will take a while to respond to you</p>
+            </div>
+        </div>
+        <script>
+            function togglePopup() {
+                var popup = document.getElementById("popup");
+                if (popup.style.display === "none" || popup.style.display === "") {
+                    popup.style.display = "block";
+                } else {
+                    popup.style.display = "none";
+                }
+            }
+        </script>
     </main>
-    <footer>
+    <footer class="text-center mt-5">
         <p>&copy; 2024 Qwallet Banking</p>
     </footer>
 </body>

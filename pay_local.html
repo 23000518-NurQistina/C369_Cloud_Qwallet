@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Qwallet Banking Digital Wallet - Transfer</title>
+    <title>Qwallet Banking Digital Wallet - Pay Quick</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -16,39 +16,47 @@
             font-size: 30px;
             font-family: 'Permanent Marker', cursive;
         }
-        h2, h3 {
+        .transfer img {
+            text-align: center;
+        }
+        .container {
+            text-align: center;
             color: rgb(105, 69, 69);
+        }
+        .bordered-form {
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            text-align: left;
+            background-color: rgb(164, 208, 208);
+        }
+        .bordered-form h2 {
+            color:rgb(105, 69, 69);
+            font-family: 'Permanent Marker', cursive;
+            font-size: 35px;
+        }
+        .bordered-form label {
+            display: block;
+            margin-bottom: 8px;
+            color: rgb(105, 69, 69);
+            font-size: 20px;
             font-family: 'Permanent Marker', cursive;
         }
-        h2 {
-            font-size: 2rem;
-        }
-        h3 {
-            font-size: 2.5rem;
-        }
-        .button {
-            margin-bottom: 10px;
+        .bordered-form input {
             width: 100%;
-        }
-        .container-right {
-            display: flex;
-            align-items: center;
-        }
-        .container-right {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            justify-content: center;
-        }
-        .container-right .button {
-            width: auto;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
         }
         .btn.btn-primary:hover {
             color:rgb(105, 69, 69);
             background-color:rgb(146, 199, 199);
         }
         .support {
-            width: 60px;
+            width: 60px; 
             height: auto; 
             position: fixed;
             right: 20px;
@@ -70,15 +78,6 @@
         }
         .btn.btn-primary.mb-2:hover {
             background-color: rgb(146, 199, 199);
-        }
-        @media (max-width: 768px) {
-            .container-left, .container-right {
-                flex-direction: column;
-                align-items: center;
-            }
-            .container-right {
-                align-items: center;
-            }
         }
     </style>
 </head>
@@ -103,31 +102,19 @@
         </div>
     </nav>
     <hr>
-    <main class="container-fluid">
+    <main>
         <div class="id">
             <p>ID:23000518</p>
         </div>
-        <div class="row">
-            <div class="col-lg-6 container-right">
-                <div class="text-center">
-                    <img src="images/success.png" class="img-fluid mb-4" width="300" alt="Tick">
-                    <h2>Successfully Transferred</h2>
-                    <h3 style="color: rgb(79, 128, 79);">SGD 50</h3>
-                    <h2>To</h2>
-                    <h2>Eva</h2>
-                </div>
-            </div>
-            <div class="col-lg-4 container-right">
-                <div class="button mb-2">
-                    <a href="trans.html" class="btn btn-primary">New Transfer</a>
-                </div>
-                <div class="button mb-2">
-                    <a href="index.html" class="btn btn-primary">Back to home</a>
-                </div>
-                <div class="button">
-                    <a href="opening.html" class="btn btn-primary">Log out</a>
-                </div>
-            </div>
+        <div class="container">
+            <form class="bordered-form">
+                <h2>Enter Amount</h2>
+                <label for="amount">Amount to transfer</label>
+                <input type="number" id="amount" name="amount" min="0.01" step="0.01" required>
+            </form>
+        </div>
+        <div class="button" style="text-align: right; margin-right: 50px; margin-top: 20px;">
+            <a href="local_con_pay.html" class="btn btn-primary">Next</a>
         </div>
         <img class="support" src="images/support.png" alt="Support" onclick="togglePopup()">
         <div class="popup" id="popup">
@@ -149,7 +136,7 @@
             }
         </script>
     </main>
-    <footer class="text-center mt-5">
+    <footer>
         <p>&copy; 2024 Qwallet Banking</p>
     </footer>
 </body>

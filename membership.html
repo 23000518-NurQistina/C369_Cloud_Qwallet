@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qwallet Banking Digital Wallet - Membership Plans</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .index img {
+            width: 245px;
+        }
+        h2 {
+            text-align: center;
+            color: rgb(105, 69, 69);
+            font-family: 'Permanent Marker', cursive;
+            font-size: 30px;
+        }
+        h3 {
+            text-align: center;
+            color: rgb(105, 69, 69);
+            font-family: 'Permanent Marker', cursive;
+            font-size: 20px;
+        }
+        .table-container {
+            margin-top: 2rem;
+            text-align: center;
+        }
+        .table-container table {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .table-container th, .table-container td {
+            text-align: center;
+            padding: 1rem;
+        }
+        .table-container th {
+            background-color: rgb(105, 69, 69);
+            color: rgb(146, 199, 199);
+        }
+        .table-container td {
+            background-color: rgb(235, 235, 235);
+            color: rgb(102, 139, 139);
+        }
+        .plan-button {
+            display: block;
+            width: 100%;
+            padding: 0.5rem;
+            background-color:rgb(102, 139, 139);
+            color: rgb(105, 69, 69);
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+        .plan-button:hover {
+            background-color: rgb(146, 199, 199);
+        }
+        .form-container {
+            margin-top: 2rem;
+            color: rgb(105, 69, 69);
+        }
+        .form-container form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .form-container label {
+            margin-bottom: 0.5rem;
+        }
+        .form-container input, .form-container select {
+            margin-bottom: 1rem;
+            width: 100%;
+            max-width: 400px;
+            color: rgb(105, 69, 69);
+        }
+        .form-container button {
+            background-color: white;
+            color: rgb(105, 69, 69);
+            border-color: rgb(105, 69, 69);
+            font-size: 20px;
+            font-family: 'Permanent Marker', cursive;
+            width: 100%;
+            max-width: 400px;
+        }
+        .form-container button:hover {
+            background-color: rgb(146, 199, 199);
+        }
+        .support {
+            width: 60px; 
+            height: auto; 
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            cursor: pointer;
+            z-index: 1000;
+        }
+        .popup {
+            position: fixed;
+            right: 80px;
+            bottom: 80px;
+            width: 300px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            display: none;
+            padding: 20px;
+            overflow: hidden;
+        }
+        .btn.btn-primary.mb-2:hover {
+            background-color: rgb(146, 199, 199);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a><img src="images/logo.png" width="60" height="60" alt="Logo"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="wallet.html">Wallet</a></li>
+                    <li class="nav-item"><a class="nav-link" href="topup.html">Top Up</a></li>
+                    <li class="nav-item"><a class="nav-link" href="trans.html">Transfer</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pay.html">Pay</a></li>
+                    <li class="nav-item"><a class="nav-link" href="other.html">Others</a></li>
+                </ul>
+                <a href="settings.html" class="btn btn-outline-secondary"><img src="images/settings.png" width="30" height="30" alt="Settings"></a>
+            </div>
+        </div>
+    </nav>
+    <hr>
+    <br>
+    <div class="container">
+        <h2>Qwallet Membership Plans</h2>
+        <div class="table-container">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Plan</th>
+                        <th>Features</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Basic</td>
+                        <td>
+                            <ul>
+                                <li>Sending and receiving money</li>
+                                <li>Viewing Transaction History</li>
+                                <li>Limited transaction amounts</li>
+                                <li>Multi-currency support</li>
+                                <li>Compatibility with popular payment methods (credit/debit cards)</li>
+                            </ul>
+                        </td>
+                        <td>S$ 0</td>
+                    </tr>
+                    <tr>
+                        <td>Standard</td>
+                        <td>
+                            <ul>
+                                <li>Advanced profile settings</li>
+                                <li>Budgeting tools and expense tracking</li>
+                                <li>Higher transaction limits</li>
+                                <li>Scheduled and recurring payments</li>
+                                <li>Cheaper transactions fees</li>
+                            </ul>
+                        </td>
+                        <td>S$ 7.98</td>
+                    </tr>
+                    <tr>
+                        <td>Premium</td>
+                        <td>
+                            <ul>
+                                <li>Family accounts or multiple user profiles</li>
+                                <li>Detailed financial analytics and reports</li>
+                                <li>Unlimited transaction amounts</li>
+                                <li>International money transfers with competitive exchange rates</li>
+                                <li>Investment options (stocks, bonds, cryptocurrencies)</li>
+                            </ul>
+                        </td>
+                        <td>S$ 14.98</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <button class="plan-button" onclick="showSignupForm()">Sign Up Now! Don't Miss Out!</button>
+        </div>
+        <div class="form-container" id="signup-form-container" style="display:none;">
+            <h3 id="form-title">Sign Up For Membership</h3>
+            <form id="signup-form" onsubmit="event.preventDefault(); setModalContent();">
+                <label for="signup-username">Username</label>
+                <input type="text" id="signup-username" name="username" required>
+                
+                <label for="signup-email">Email</label>
+                <input type="email" id="signup-email" name="email" required>
+
+                <label for="signup-password">Password</label>
+                <input type="password" id="signup-password" name="password" required>
+                
+                <label for="membership">Membership Bundle</label>
+                <select id="membership" name="membership" class="form-select">
+                    <option value="Basic">Basic - S$ 0</option>
+                    <option value="Standard">Standard - S$ 7.98</option>
+                    <option value="Premium">Premium - S$ 14.98</option>
+                </select>
+
+                <label for="payment">Payment Method</label>
+                <select id="payment" name="payment" class="form-select">
+                    <option value="Qwallet">Qwallet</option>
+                    <option value="PayNow">PayNow</option>
+                    <option value="Credit">Credit/Debit Card</option>
+                </select>
+
+                <button type="submit" data-bs-toggle="modal" data-bs-target="#confirmation">Confirm</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal fade" id="confirmation" tabindex="-1" aria-labelledby="confirmationForm" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmationForm" style="color:rgb(105, 69, 69); font-family: 'Permanent Marker', cursive;">Confirm Membership</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" style="color:rgb(105, 69, 69); font-family: 'Permanent Marker', cursive;">
+                    <p>Are you sure you want to buy this membership bundle plan? For <span id="cmembership"></span> using <span id="cpayment"></span>?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="color:rgb(105, 69, 69); background-color: rgb(143, 177, 177); font-family: 'Permanent Marker', cursive;">Cancel</button>
+                    <a href="succ_membership.html" class="btn btn-primary" style="color:rgb(105, 69, 69); background-color: rgb(146, 199, 199); border-color: rgb(146, 199, 199);">Confirm</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <img class="support" src="images/support.png" alt="Support" onclick="togglePopup()">
+        <div class="popup" id="popup">
+            <img class="loansupport" src="images/support.png">
+            <div>
+                <button class="btn btn-primary mb-2">Ask a question</button>
+                <button class="btn btn-primary mb-2">Message</button>
+                <p>Our live chat will take a while to respond to you</p>
+            </div>
+        </div>
+
+    <script>
+        function showSignupForm() {
+            document.querySelector('.table-container').style.display = 'none';
+            document.getElementById('signup-form-container').style.display = 'block';
+        }
+        function setModalContent() {
+            const membership = document.getElementById('membership').options[document.getElementById('membership').selectedIndex].text;
+            const payment = document.getElementById('payment').options[document.getElementById('payment').selectedIndex].text;
+            document.getElementById('cmembership').innerText = membership;
+            document.getElementById('cpayment').innerText = payment;
+            new bootstrap.Modal(document.getElementById('confirmation')).show();
+        }
+        function togglePopup() {
+            var popup = document.getElementById("popup");
+            if (popup.style.display === "none" || popup.style.display === "") {
+                popup.style.display = "block";
+            } else {
+                popup.style.display = "none";
+            }
+        }
+    </script>
+    <footer>
+        <p>&copy; 2024 Qwallet Banking</p>
+    </footer>
+</body>
+</html>
+

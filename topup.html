@@ -45,7 +45,7 @@
         }
 
         .form-section select,
-        .form-section input[type="number"] {
+        .form-section input[type="text"] {
             color: rgb(105, 69, 69);
             width: 100%;
             padding: 10px;
@@ -54,18 +54,24 @@
             border-radius: 4px;
         }
 
+        .button-container {
+            display: flex;
+            justify-content: center;
+        }
+
         .form-section button {
-            width: 100%;
+            width: 50%;
             padding: 10px;
             background-color: rgb(164, 203, 203);
             color: rgb(105, 69, 69);
             border: none;
             border-radius: 4px;
             cursor: pointer;
+            text-align: center;
         }
 
         .form-section button:hover {
-            background-color: rgb(105, 69, 69); 
+            background-color: rgb(82, 154, 154); 
             color: #fff;
         }
 
@@ -98,18 +104,55 @@
             background-color: rgb(82, 154, 154);
         }
 
-        .delete-button {
-            background-color: rgb(255, 99, 71); /* Tomato color for delete */
+        .btn.btn-primary:hover{
+            background-color: rgb(164, 203, 203);
+            color:rgb(105, 69, 69);
         }
-
-        .delete-button:hover {
-            background-color: rgb(204, 0, 0); /* Darker red for hover */
+        .support {
+            width: 60px; 
+            height: auto; 
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            cursor: pointer;
+            z-index: 1000;
+        }
+        .popup {
+            position: fixed;
+            right: 80px;
+            bottom: 80px;
+            width: 300px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            display: none;
+            padding: 20px;
+            overflow: hidden;
+        }
+        .btn.btn-primary.mb-2:hover {
+            background-color: rgb(146, 199, 199);
         }
     </style>
 </head>
 <body>
-    <nav>
-        <!-- Navigation code here -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a><img src="images/logo.png" width="60" height="60" alt="Logo"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="wallet.html">Wallet</a></li>
+                    <li class="nav-item"><a class="nav-link" href="topup.html">Top Up</a></li>
+                    <li class="nav-item"><a class="nav-link" href="trans.html">Transfer</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pay.html">Pay</a></li>
+                    <li class="nav-item"><a class="nav-link" href="other.html">Others</a></li>
+                </ul>
+                <a href="settings.html" class="btn btn-outline-secondary"><img src="images/settings.png" width="30" height="30" alt="Settings"></a>
+            </div>
+        </div>
     </nav>
     <hr>
     <div class="container">
@@ -127,9 +170,11 @@
                     </div>
                     <div class="mb-3">
                         <label for="amount-input" class="form-label">Enter Amount:</label>
-                        <input type="number" id="amount-input" name="amount" min="0" step="0.01" required class="form-control">
+                        <input type="text" id="amount-input" name="amount" min="0" step="0.01" required class="form-control">
                     </div>
-                    <button type="submit" class="btn btn-primary">Top Up</button>
+                    <div class="button-container">
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#confirmation" onclick="setModalContent()">Top Up</button>
+                    </div>
                 </form>
             </div>
 
@@ -152,12 +197,40 @@
         </div>
     </div>
 
+    <div class="modal fade" id="confirmation" tabindex="-1" aria-labelledby="confirmationForm" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmationForm" style="color:rgb(105, 69, 69); font-family: 'Permanent Marker', cursive;">Confirm Top Up</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" style="color:rgb(105, 69, 69); font-family: 'Permanent Marker', cursive;">
+                    <p>Are you sure you want to top up $<span id="confirm-amount"></span> from <span id="confirm-method"></span>?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="color:rgb(105, 69, 69); background-color: rgb(143, 177, 177); font-family: 'Permanent Marker', cursive;">Cancel</button>
+                    <a href="succ_topup.html" button type="button" class="btn btn-primary" style="color:rgb(105, 69, 69); background-color: rgb(146, 199, 199); border-color: rgb(146, 199, 199);">Confirm</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <img class="support" src="images/support.png" alt="Support" onclick="togglePopup()">
+        <div class="popup" id="popup">
+            <img class="loansupport" src="images/support.png">
+            <div>
+                <button class="btn btn-primary mb-2">Ask a question</button>
+                <button class="btn btn-primary mb-2">Message</button>
+                <p>Our live chat will take a while to respond to you</p>
+            </div>
+        </div>
+        
     <script>
         function appendNumber(number) {
             const amountInput = document.getElementById('amount-input');
             let currentValue = amountInput.value;
 
-            if (currentValue === '' || currentValue === '0') {
+            if (currentValue === '' || currentValue == '0') {
                 amountInput.value = number;
             } else {
                 amountInput.value += number;
@@ -168,25 +241,35 @@
             const amountInput = document.getElementById('amount-input');
             let currentValue = amountInput.value;
 
-            if (currentValue === '') {
-                amountInput.value = '0.';
-            } else if (!currentValue.includes('.')) {
-                amountInput.value += '.';
+            if (!currentValue.includes('.')) {
+                if (currentValue == '') {
+                    amountInput.value = '0.';
+                } else {
+                    amountInput.value += '.';
+                }
             }
         }
 
         function deleteLast() {
             const amountInput = document.getElementById('amount-input');
-            let currentValue = amountInput.value;
+            amountInput.value = amountInput.value.slice(0, -1);
+        }
 
-            if (currentValue.length > 0) {
-                amountInput.value = currentValue.slice(0, -1);
-
-                if (amountInput.value === '') {
-                    amountInput.value = '0';
-                }
+        function setModalContent() {
+            const amount = document.getElementById('amount-input').value;
+            const method = document.getElementById('from-wallet-select').options[document.getElementById('from-wallet-select').selectedIndex].text;
+            document.getElementById('confirm-amount').innerText = amount;
+            document.getElementById('confirm-method').innerText = method;
+        }
+        function togglePopup() {
+            var popup = document.getElementById("popup");
+            if (popup.style.display === "none" || popup.style.display === "") {
+                popup.style.display = "block";
+            } else {
+                popup.style.display = "none";
             }
         }
     </script>
 </body>
 </html>
+

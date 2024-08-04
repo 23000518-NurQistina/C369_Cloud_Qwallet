@@ -12,26 +12,70 @@
         .others img {
             width: 240px;
         } 
+        .support {
+            width: 60px; 
+            height: auto;
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            cursor: pointer;
+            z-index: 1000;
+        }
+        .popup {
+            position: fixed;
+            right: 80px;
+            bottom: 80px;
+            width: 300px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            display: none;
+            padding: 20px;
+            overflow: hidden;
+        }
+        .btn.btn-primary.mb-2:hover {
+            background-color: rgb(146, 199, 199);
+        }
     </style>
 </head>
 <body>
-    <nav>
-        <div class="navbar">
-            <div class="navbar-logo">
-                <a href="opening.html"><img src="images/logo.png" width="60" height="60" alt="Logo"></a>
-            </div>
-            <ul class="navbar-navlink">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="wallet.html">Wallet</a></li>
-                <li><a href="topup.html">Top Up</a></li>
-                <li><a href="trans.html">Transfer</a></li>
-                <li><a href="pay.html">Pay</a></li>
-                <li><a href="other.html">Others</a></li>
-            </ul>
-            <div class="set-logo">
-                <a href="settings.html"><img src="images/settings.png" width="60" height="60" alt="Settings"></a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a><img src="images/logo.png" width="60" height="60" alt="Logo"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="wallet.html">Wallet</a></li>
+                    <li class="nav-item"><a class="nav-link" href="topup.html">Top Up</a></li>
+                    <li class="nav-item"><a class="nav-link" href="trans.html">Transfer</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pay.html">Pay</a></li>
+                    <li class="nav-item"><a class="nav-link" href="other.html">Others</a></li>
+                </ul>
+                <a href="settings.html" class="btn btn-outline-secondary"><img src="images/settings.png" width="30" height="30" alt="Settings"></a>
             </div>
         </div>
+        <img class="support" src="images/support.png" alt="Support" onclick="togglePopup()">
+        <div class="popup" id="popup">
+            <img class="loansupport" src="images/support.png">
+            <div>
+                <button class="btn btn-primary mb-2">Ask a question</button>
+                <button class="btn btn-primary mb-2">Message</button>
+                <p>Our live chat will take a while to respond to you</p>
+            </div>
+        </div>
+        <script>
+            function togglePopup() {
+                var popup = document.getElementById("popup");
+                if (popup.style.display === "none" || popup.style.display === "") {
+                    popup.style.display = "block";
+                } else {
+                    popup.style.display = "none";
+                }
+            }
+        </script>
     </nav>
     <hr>
     <main>
